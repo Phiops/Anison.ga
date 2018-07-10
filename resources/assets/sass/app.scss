@@ -80,10 +80,10 @@ audio:nth-child(6) {
 // #myInput1,
 // #myInput2,
 // #myInput3,
-// #myTable {
-//     width: 100%;
-//     border: 1px solid #ddd
-// }
+#myTable {
+    width: 100%;
+    border: 1px solid #ddd
+}
 
 // #myInput1,
 // #myInput2,
@@ -95,29 +95,29 @@ audio:nth-child(6) {
 //     margin-bottom: 5px
 // }
 
-// .latest {
-//   color:black;
-// }
+.latest {
+  color:black;
+}
 
-// #myTable {
-//     border-collapse: collapse;
-//     font-size: 18px
-// }
+#myTable {
+    border-collapse: collapse;
+    font-size: 1.1em;
+}
 
-// #myTable td,
-// #myTable th {
-//     text-align: left;
-//     padding: 12px
-// }
+#myTable td,
+#myTable th {
+    text-align: left;
+    padding: 12px
+}
 
-// #myTable tr {
-//     border-bottom: 1px solid #ddd
-// }
+#myTable tr {
+    border-bottom: 1px solid #ddd
+}
 
-// #myTable tr.header,
-// #myTable tr:hover {
-//     background-color: #f1f1f1
-// }
+#myTable tr.header,
+#myTable tr:hover {
+    background-color: #f1f1f1
+}
 
 // * {
 //     text-align: center
@@ -136,13 +136,42 @@ audio:nth-child(6) {
   color: #fff;
 }
 
+// RESPONSIVE SETTINGS
+@media only screen and (max-width: 768px){
+.play-button-cap {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  max-height: 80px;
+}
+.my-play-button>.btn.btn-dark{
+  border-top-left-radius: 4px!important;
+  border-bottom-left-radius: 4px!important;
+}
+.song-title-sm {
+  font-weight: 600;
+}
+.anime-img-bg {
+  height: 150px;
+}
+.top-card {
+  min-height: 250px;
+  max-height: 250px;
+  text-align: center;
+}
+.mobile-blank {
+  display: none;
+}
+}
+
 .my-play-button > .btn.btn-dark {
   width: 100%;
   height: 100%;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
 }
-
+.my-play-button > .btn-dark:hover {
+ color: #dea801!important;
+}
 .my-play-button-low>.btn.btn-dark {
   min-width: 100%;
   border-top-left-radius: 0px;
@@ -159,9 +188,27 @@ button.my-play-button-low {
   width: 100%;
   overflow: hidden;
   z-index: 1000!important;
-  
+  max-height: 100px;
+}
+.list-card {
+  width: 100%;
+  overflow: hidden;
 }
 
+.row-cap {
+  height: 25px;
+}
+@media only screen and (max-width: 768px){
+.row-cap {
+  height: 110px;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+}
+.card-img-cap {
+  min-height: 200px;
+}
 #top-navigation.nav-pills .nav-link {
   border-radius: 0px;
 }
@@ -248,7 +295,7 @@ img.anime-img {
   bottom: 0px!important;
   color: #fff;
   width: 100%;
-  background-color: #343a40;
+  background-color: #343a4081;
   position: absolute;
 }
 
