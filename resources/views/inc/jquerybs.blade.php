@@ -1,2 +1,2 @@
-<script src="{{setting('site.url')}}js/app.js"></script>
-<link rel="stylesheet" href="{{setting('site.url')}}css/app.css">
+<script src="{{url('/')}}/js/app.js"></script>
+<link rel="stylesheet" href="{{url('/')}}/css/app.css">

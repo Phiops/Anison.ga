@@ -30,10 +30,10 @@ query ($id: Int) {
 }
 ';
 $variables = [
-    "id" => "{$song->animeid}"
+    "id" => "{$latestsong->animeid}" 
 ];
 $http = new GuzzleHttp\Client;
-$response = $http->post('https://graphql.anilist.co', [
+$response = $http->post('https://graphql.anilist.co', [ 
     'json' => [
         'query' => $query,
         'variables' => $variables,

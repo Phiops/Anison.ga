@@ -1,28 +1,28 @@
 <?php
-$audiolink="https://my.mixtape.moe/{$song->audioid}";
-$artistlink="https://anilist.co/staff/{$song->artistid}";
-$animelink="https://anilist.co/anime/{$song->animeid}";
+$audiolink="https://my.mixtape.moe/{$latestsong->audioid}";
+$artistlink="https://anilist.co/staff/{$latestsong->artistid}";
+$animelink="https://anilist.co/anime/{$latestsong->animeid}";
 include 'anilist.php';
 ?>
 
 <head>
     @include('inc.jquerybs')
     <meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport'>
-    <meta content='{{$song->artist}} - {{$song->song}}' property='og:title'>
+    <meta content='{{$latestsong->artist}} - {{$latestsong->song}}' property='og:title'>
     <meta content='{{$audiolink}}' property='og:audio'>
     <meta content='Anison.ga' property='og:site_name'>
-    <link rel=icon href='{{ setting('site.url') }}favicon.ico'>
-    <title>{{$song->artist}} - {{$song->song}}</title>
+    <link rel=icon href='{{url('/')}}/favicon.ico'>
+    <title>{{$latestsong->artist}} - {{$latestsong->song}}</title>
 </head>
 
 <body class="play">
     @include('inc.navbar')
-    <br><br><h1>@if(empty($song->artistid)){{$song->artist}} @else <a target="_blank" href="<?= $artistlink?>">{{$song->artist}}</a> @endif - {{$song->song}}</h1>
-    <h3><a target="_blank" href="<?= $animelink?>">{{$song->anime}}</a></h3><br><br>
+    <br><br><h1>@if(empty($latestsong->artistid)){{$latestsong->artist}} @else <a target="_blank" href="<?= $artistlink?>">{{$latestsong->artist}}</a> @endif - {{$latestsong->song}}</h1>
+    <h3><a target="_blank" href="<?= $animelink?>">{{$latestsong->anime}}</a></h3><br><br>
     <div class='round audio'><audio preload='auto' controls loop controlsList='nodownload' src='<?= $audiolink?>'></audio></div><br> 
-    @if(empty($song->lyrics)) @else
+    @if(empty($latestsong->lyrics)) @else
     <button class="btn btn-outline-dark btn-lg btn-block round audio" type="button" data-toggle="collapse" data-target="#collapseLyrics" aria-expanded="false" aria-controls="collapseLyrics">Show/hide lyrics</button>
-    <div class="collapse" id="collapseLyrics"><br><div class="card card-body lyrics">{{$song->lyrics}}</div>
+    <div class="collapse" id="collapseLyrics"><br><div class="card card-body lyrics">{{$latestsong->lyrics}}</div>
     </div>@endif<br>
 
     @notmobile

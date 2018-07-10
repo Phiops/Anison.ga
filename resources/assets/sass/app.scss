@@ -1,13 +1,23 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway");
+//@import url("https://fonts.googleapis.com/css?family=Raleway");
 
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
 // Variables
 @import "variables";
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
+.body{
+  background-color: #343a40;
+  font-family: Product Sans;
+  letter-spacing: 0.3px;
+}
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -113,7 +123,14 @@ audio:nth-child(6) {
 //     text-align: center
 // }
 
-/*CUSTOM CSS*/.my-play-button {
+/*CUSTOM CSS*/
+.col-heading{
+  font-weight: 600;
+}
+.new-label {
+ left:0px;
+}
+.my-play-button {
   width: 100%!important;
   height: 100%!important;
   color: #fff;
@@ -141,6 +158,8 @@ button.my-play-button-low {
 .top-card {
   width: 100%;
   overflow: hidden;
+  z-index: 1000!important;
+  
 }
 
 #top-navigation.nav-pills .nav-link {
@@ -167,12 +186,23 @@ a {
   bottom: 0px!important;
   color: #fff;
   width: 95%;
-  background-color: #343a40;
+  background-color: #343a409a;
   position: absolute;
+}
+.anime-name-holder>h6>a{
+  color: #fff;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.anime-name-holder>h6>a:hover{
+  color: #dea801!important;
+  vertical-align: -webkit-baseline-middle;
+  vertical-align: middle;
 }
 
 .my-header {
-  background-image: url('placeholder-header2.jpg');
+  background-color: #dea801;
+  // background-image: url('placeholder-header2.jpg');
 }
 
 .paral {
@@ -208,7 +238,8 @@ img.anime-img {
 }
 
 .anime-img-bg {
-  background-image: url('placeholder-header.jpg');
+  // background-image: url('placeholder-header.jpg');
+  background-color: aqua;
   background-size: cover;
 }
 

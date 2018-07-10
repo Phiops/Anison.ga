@@ -19,7 +19,7 @@ class SongController extends Controller
 
     public function play($id) {
         $song = Song::find($id);
-        return view('play')->with('song', $song);
+        return view('play')->with('latestsong', $song);
     }
 
     // Submitting songs

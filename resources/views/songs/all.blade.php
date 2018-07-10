@@ -1,13 +1,10 @@
 <?php 
 use Anison\Song;
 use Anison\Requests;
-$latestsong = Song::latest()->first();
 $songamount = Song::count();
 $requestamount = Requests::count();
 $percentage = ($songamount * 100) / ($songamount + $requestamount);
 ?>
-
-
 
 <!-- HEADER IMAGE CONTAINER WITH SITE TITLE -->
 
@@ -43,9 +40,10 @@ $percentage = ($songamount * 100) / ($songamount + $requestamount);
             <div class="col-xl-8">
                 <div class="card top-card shadow-lg">
                     <div class="row">
-                        <div class="col-lg-4 anime-img-bg">
+                        <?php $latestsong = Song::latest()->first(); include 'anilist.php';?>
+                        <div class="col-lg-4 anime-img-bg" style="background-image: url({{$image}})">
                             <div class="row">
-                                <span class="ml-3 p-2 badge badge-warning">New</span>
+                            <span class="ml-3 p-2 badge badge-warning">New</span>
                             </div>
                             <div class="row">
                                 <span class="anime-name-holder">
@@ -63,15 +61,16 @@ $percentage = ($songamount * 100) / ($songamount + $requestamount);
                         <div class="col-lg-2 my-play-button">
                             <button type="button" class="btn btn-dark" onclick="location.href = '/play/{{$latestsong->id}}';">
                                 <i class="fas fa-play"></i>
-                                </buttona>
+                                </button>
                         </div>
                     </div>
                     
                 </div>
 
-                <div class="mt-lg-5 card top-card shadow-lg">
+                <div class="mt-lg-3 card top-card shadow-lg">
                     <div class="row">
-                        <div class="col-lg-4 anime-img-bg">
+                        <?php $latestsong = Song::orderBy('id', 'desc')->skip(1)->take(1)->get()->first(); include 'anilist.php';?>
+                        <div class="col-lg-4 anime-img-bg" style="background-image: url({{$image}})">
                             <div class="row">
                                 <span class="ml-3 p-2 badge badge-warning">New</span>
                             </div>
@@ -141,9 +140,9 @@ $percentage = ($songamount * 100) / ($songamount + $requestamount);
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                     <div class="row">
-                        <div class="col">Anime</div>
-                        <div class="col">Song</div>
-                        <div class="col">Artist</div>
+                        <div class="col col-heading">Anime</div>
+                        <div class="col col-heading">Song</div>
+                        <div class="col col-heading">Artist</div>
                         <div class="col-lg-1"></div>
                     </div>
                 </li>    
